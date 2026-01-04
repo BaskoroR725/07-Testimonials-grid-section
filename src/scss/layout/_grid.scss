@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding-inline: 1.5rem;
+  max-width: 1110px;
+  margin-inline: auto;
+  grid-template-areas:
+    "daniel"
+    "jonathan"
+    "jeanette"
+    "patrick"
+    "kira";
+
+  // Desktop ver
+  @media (min-width: 64rem) {
+    padding-inline: 0;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+  }
+}
+.testimonial-card--purple {
+  grid-area: daniel;
+}
+.testimonial-card--gray {
+  grid-area: jonathan;
+}
+.testimonial-card--white:not(.testimonial-card--tall) {
+  grid-area: jeanette;
+}
+.testimonial-card--dark-blue {
+  grid-area: patrick;
+}
+.testimonial-card--tall {
+  grid-area: kira;
+}

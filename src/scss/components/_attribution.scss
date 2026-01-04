@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+
+.attribution {
+  font-size: clamp(0.6875rem, 0.5rem + 0.5vw, 0.875rem);
+  text-align: center;
+  margin-block-start: 2rem;
+  color: $dark-gray-blue;
+  padding-inline: 1rem; 
+
+  a {
+    color: $purple-500;
+    text-decoration: none;
+    font-weight: $fw-semibold;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $dark-black-blue;
+      text-decoration: underline;
+    }
+  }
+}

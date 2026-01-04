@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+body{
+  font-family: $font-family-main;
+  font-size: $font-size-base;
+  background-color: $light-gray-blue;
+  color: $dark-gray-blue;
+
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  padding-block: 2rem;
+}
+
+ul {
+  list-style: none;
+}

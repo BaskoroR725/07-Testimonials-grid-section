@@ -6,13 +6,6 @@
   margin: 0;
 }
 
-body{
-  line-height: 1.5;
-  -webkit-font-smoothing:antialiased;
-  min-height: 100vh;
-  background-color: hsl(210, 46%, 95%);
-}
-
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
@@ -20,4 +13,17 @@ img, picture, video, canvas, svg {
 
 p, h1, h2, h3 {
   overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
