@@ -1,39 +1,45 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
 
-.testimonial-card{
+.testimonial-card {
   padding: 2rem;
   border-radius: 0.5rem;
-  position: relative; 
+  position: relative;
   box-shadow: 40px 60px 50px -10px rgba(72, 85, 106, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 40px 60px 50px -10px rgba(72, 85, 106, 0.2);
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  &__header{
+  &:hover {
+    box-shadow: 40px 60px 50px -10px rgba(72, 85, 106, 0.2);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__header {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.125rem;
   }
 
-  &__avatar{
+  &__avatar {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     border: 2px solid transparent;
   }
 
-  &__name{
+  &__name {
     font-size: 0.8125rem;
     font-weight: $fw-semibold;
     line-height: 1;
   }
 
-  &__status{
+  &__status {
     font-size: 0.6875rem;
     opacity: 0.5;
     font-weight: $fw-semibold;
@@ -43,13 +49,13 @@
   }
 
   &__lead {
-  font-size: 1.25rem;  
-  font-weight: $fw-semibold;
-  line-height: 1.2;
-  margin-block: 1rem; 
-  position: relative;
-  z-index: 2;         
-}
+    font-size: 1.25rem;
+    font-weight: $fw-semibold;
+    line-height: 1.2;
+    margin-block: 1rem;
+    position: relative;
+    z-index: 2;
+  }
 
   &__quote {
     font-size: 0.8125rem;
@@ -62,7 +68,7 @@
   background-color: $purple-500;
   color: $white;
 
-  background-image: url('../../images/bg-pattern-quotation.svg');
+  background-image: url("../../images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
   background-position: top right 20%;
 
@@ -88,7 +94,7 @@
 .testimonial-card--white {
   background-color: $white;
   color: $dark-gray-blue;
-  
+
   .testimonial-card__quote {
     color: $dark-gray-blue;
   }

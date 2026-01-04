@@ -1,6 +1,6 @@
 # Frontend Mentor - Testimonials grid section solution
 
-This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). 
+This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7).
 
 ## Table of contents
 
@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add your GitHub repository URL here]
-- Live Site URL: [Add your live site URL here, e.g., Vercel or GitHub Pages]
+- Solution URL: [https://github.com/BaskoroR725/07-Testimonials-grid-section.git]
+- Live Site URL: [https://baskoror725.github.io/07-Testimonials-grid-section/]
 
 ## My process
 
@@ -51,21 +51,23 @@ I'm particularly proud of this Grid implementation:
 ```css
 @media (min-width: 64rem) {
   .testimonial-grid {
-    grid-template-areas: 
+    grid-template-areas:
       "daniel daniel jonathan kira"
       "jeanette patrick patrick kira";
   }
 }
 ```
 
-I also implemented a global reset that respects accessibility by supporting users who prefer reduced motion:
+Instead of applying transitions globally and forcing them to stop with `!important` for accessibility, I used the `no-preference` media query. This ensures that animations only run for users who haven't enabled "Reduce Motion" in their system settings, improving both performance and accessibility.
 
 ```css
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@media (prefers-reduced-motion: no-preference) {
+  .testimonial-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
   }
 }
 ```
